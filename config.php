@@ -8,10 +8,11 @@ $pass   = getenv('DB_PASS')   ?: '';
 $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require;sslrootcert=neon-ca-bundle.pem";  // sslmode=require is key for Neon
 
 try {
-    $pdo = new PDO($dsn, $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // Optional: echo "Connected successfully"; // for testing, remove later
+    $stmt = $pdo->query("SELECT * FROM products");
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    $products = [];  // Empty array if error
+    // Optional: echo "No products found or DB error.";
 }
 ?>
+
