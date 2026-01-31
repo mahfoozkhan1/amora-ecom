@@ -19,7 +19,9 @@ CREATE TABLE orders (
     status VARCHAR(50) DEFAULT 'Pending'
 );
 
--- Sample products
+-- Add some sample candles so the page isn't empty
 INSERT INTO products (name, description, price, image) VALUES
-('Lavender Serenity', 'Calming soy candle', 649, 'https://example.com/lavender.jpg'),
-('Vanilla Warmth', 'Rich vanilla beeswax', 599, 'https://example.com/vanilla.jpg');
+('Lavender Serenity', 'Calming lavender & chamomile soy candle', 649.00, 'https://images.unsplash.com/photo-1603006905886-9f8a2160db25?w=800'),
+('Vanilla Warmth', 'Rich vanilla beeswax candle', 599.00, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'),
+('Sandalwood & Amber', 'Deep woody oriental fragrance', 799.00, 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'),
+('Citrus Grove', 'Fresh lemon & bergamot scent', 549.00, 'https://images.unsplash.com/photo-1603006905886-9f8a2160db25?w=800');
